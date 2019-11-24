@@ -35,6 +35,20 @@ namespace OccupationLog
                 ls[i] += ";" + cell.Range.Text.Substring(9,1);
             }
         }
+        private void FillProverka(List<string> ls, List<string> Proverka)
+        {
+            for (int i = 0; i < ls.Count; i++)
+            {
+                string[] pr = ls[i].Split(';');
+                if (pr[0] != "" && pr[2] == comboBox1.Text)
+                {
+                    for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
+                    {
+                        Proverka.Add(pr[1]);
+                    }
+                }
+            }
+        }
         private void Button1_Click(object sender, EventArgs e) // Поиск преподавателя
         {
             try
@@ -273,21 +287,19 @@ namespace OccupationLog
                 {
                     try
                     {
-                        // число, месяц - время - №группы - isлекция
                         driver = new ChromeDriver(); WebDriverIsOpen = true;
-                        if (comboBox1.Text == "1" || comboBox1.Text == "3" || comboBox1.Text == "5" || comboBox1.Text == "7")
+                        if (Convert.ToInt32(comboBox1.Text) % 2 == 1) 
                         {
                             WeekTo = 18; WeekStart = 1;
-                            //driver.Url = @"" + lb.Tag + "&week_num=1";
                         }
-                        else if (comboBox1.Text == "2" || comboBox1.Text == "4" || comboBox1.Text == "6" || comboBox1.Text == "8")
+                        else if (Convert.ToInt32(comboBox1.Text) % 2 == 0)
                         {
                             WeekTo = 44; WeekStart = 24;
-                            //driver.Url = @"" + lb.Tag + "&week_num=24";
                         }
                         for (int week = WeekStart; week < WeekTo; week++)
                         {
                             //driver.Url = @"" + lb.Tag + "&week_num=" + week; ВЕРНУТЬ!!!!
+                            NameOfTheDiscipline = "Теория и практика разработки электронных обучающих пособий"; // ПОТОМ УДАЛИТЬ
                             driver.Url = @"http://schedule.tsu.ru/teachers_schedule?teach_id=15513&week_num=" + week;
                             var GetDate = driver.FindElement(By.XPath(@".//div[@class='schedule-print-block']/span[@class='schedule-info-week']"));
                             var date = GetDate.Text.Substring(GetDate.Text.Length - 23, 23).Substring(0, 10).Replace(".", "/");
@@ -300,7 +312,7 @@ namespace OccupationLog
                                 {
                                     try
                                     {
-                                        var GetName = tryCSS[k].FindElement(By.TagName("label")).Text;//(By.XPath("./div[@class='all_lessons_info']/div[class='one_lesson_info']/label")).Text;
+                                        var GetName = tryCSS[k].FindElement(By.TagName("label")).Text;
                                         if (GetName == NameOfTheDiscipline)
                                         {
                                             var ProverkaLekcii = tryCSS[k].FindElement(By.ClassName("type_employment")).GetAttribute("style");
@@ -324,23 +336,13 @@ namespace OccupationLog
                                 }
                             }
                         }
-                        int flazhok = 0;
                         List<string> proverka = new List<string>();
-                        string Semestr = comboBox1.Text;
-                        for (int i = 0; i < AllListLec.Count; i++)
-                        {
-                            string[] pr = new string[2];
-                            pr = AllListLec[i].Split(';');
-                            if (pr[0] != "" && pr[2] == Semestr)
-                            {
-                                for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
-                                {
-                                    proverka.Add(pr[1]);
-                                    flazhok++;
-                                }
-                            }
-                        }
-                        flazhok = 0;
+                        List<string> proverka2 = new List<string>();
+                        List<string> proverka3 = new List<string>();
+                        FillProverka(AllListLec, proverka);
+                        FillProverka(AllListLab, proverka2);
+                        FillProverka(AllListPr, proverka3);
+
                         List<string> ListOfPrakrics = new List<string>();
                         List<string> ListOfLections = new List<string>();
                         List<string> CountOfGroups = new List<string>();
@@ -390,20 +392,7 @@ namespace OccupationLog
                                 CountOfGroupsLections.Add(GetGroup[2]);
                             IsHave = true;
                         }
-                        List<string> proverka2 = new List<string>();
-                        for (int i = 0; i < AllListPr.Count; i++)
-                        {
-                            string[] pr = new string[2];
-                            pr = AllListPr[i].Split(';');
-                            if (pr[0] != "")
-                            {
-                                for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
-                                {
-                                    proverka2.Add(pr[1]);
-                                    flazhok++;
-                                }
-                            }
-                        }
+                       
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
                             string[] DataOfLesson = new string[4];
@@ -430,7 +419,7 @@ namespace OccupationLog
                                     i += CountOfGroupsLections.Count - 1;
                                 }
                             }
-                            else if (DataOfLesson[3] == "п")
+                            else if (DataOfLesson[3] == "лаб")
                             {
                                 if (proverka2[0] == proverka2[1])
                                 {
@@ -449,6 +438,28 @@ namespace OccupationLog
 
                                     }
                                     proverka2.RemoveAt(0); proverka2.RemoveAt(0);
+                                    i += CountOfGroups.Count - 1;
+                                }
+                            }
+                            else if (DataOfLesson[3] == "пр")
+                            {
+                                if (proverka3[0] == proverka3[1])
+                                {
+                                    for (int j = 0; j < CountOfGroups.Count; j++)
+                                    {
+                                        AllInfo[i + j] = proverka3[0] + "," + AllInfo[i + j];
+                                    }
+                                    proverka3.RemoveAt(0); proverka3.RemoveAt(0);
+                                    i += CountOfGroups.Count - 1;
+                                }
+                                else
+                                {
+                                    for (int j = 0; j < CountOfGroups.Count; j++)
+                                    {
+                                        AllInfo[i + j] = proverka3[0] + "\n" + proverka3[1] + "," + AllInfo[i + j];
+
+                                    }
+                                    proverka3.RemoveAt(0); proverka3.RemoveAt(0);
                                     i += CountOfGroups.Count - 1;
                                 }
                             }
@@ -514,9 +525,13 @@ namespace OccupationLog
                             {
                                 range = range = xlWorkSheet.get_Range("E" + index.ToString()).Cells; range.FormulaR1C1 = "2";
                             }
-                            else
+                            else if (part[4] == "лаб")
                             {
                                 range = range = xlWorkSheet.get_Range("F" + index.ToString()).Cells; range.FormulaR1C1 = "2";
+                            }
+                            else if (part[4] == "пр")
+                            {
+                                range = range = xlWorkSheet.get_Range("F" + index.ToString()).Cells; range.FormulaR1C1 = "2"; // в той же ячейке лабы с практиками
                             }
                         }
                     }

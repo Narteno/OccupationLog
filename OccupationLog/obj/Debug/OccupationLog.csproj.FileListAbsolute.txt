@@ -11,3 +11,17 @@ I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyCom
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.ResolveComReference.cache
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe.config
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.pdb
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\bin\Debug\WebDriver.dll
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\bin\Debug\WebDriver.xml
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csprojAssemblyReference.cache
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.ResolveComReference.cache
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Form1.resources
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Properties.Resources.resources
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.GenerateResource.cache
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CoreCompileInputs.cache
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyComplete
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
+D:\Рабочий стол\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb

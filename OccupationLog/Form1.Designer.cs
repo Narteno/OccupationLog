@@ -152,7 +152,7 @@
             this.label2.Location = new System.Drawing.Point(31, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(360, 27);
+            this.label2.Size = new System.Drawing.Size(280, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Введите фамилию преподавателя:";
             // 
@@ -162,7 +162,7 @@
             this.tb_family_teacher.Location = new System.Drawing.Point(31, 95);
             this.tb_family_teacher.Margin = new System.Windows.Forms.Padding(5);
             this.tb_family_teacher.Name = "tb_family_teacher";
-            this.tb_family_teacher.Size = new System.Drawing.Size(374, 34);
+            this.tb_family_teacher.Size = new System.Drawing.Size(374, 29);
             this.tb_family_teacher.TabIndex = 4;
             this.tb_family_teacher.Text = "Гавриляк";
             // 
@@ -173,7 +173,7 @@
             this.label3.Location = new System.Drawing.Point(36, 322);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(292, 27);
+            this.label3.Size = new System.Drawing.Size(230, 21);
             this.label3.TabIndex = 5;
             this.label3.Text = "Выберите документ с РПД:";
             // 
@@ -196,7 +196,7 @@
             this.label4.Location = new System.Drawing.Point(36, 427);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(224, 27);
+            this.label4.Size = new System.Drawing.Size(177, 21);
             this.label4.TabIndex = 7;
             this.label4.Text = "Документ не выбран";
             // 
@@ -207,7 +207,7 @@
             this.label5.Location = new System.Drawing.Point(511, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(700, 27);
+            this.label5.Size = new System.Drawing.Size(554, 21);
             this.label5.TabIndex = 8;
             this.label5.Text = "Подтвердите Ваш выбор, щёлкнув по ФИО нужного преподавателя";
             this.label5.Visible = false;
@@ -231,7 +231,7 @@
             this.label6.Location = new System.Drawing.Point(31, 202);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(404, 54);
+            this.label6.Size = new System.Drawing.Size(320, 42);
             this.label6.TabIndex = 10;
             this.label6.Text = "Выберите семестр, за который хотите \r\nсоставить журнал";
             // 
@@ -249,7 +249,7 @@
             "8"});
             this.comboBox1.Location = new System.Drawing.Point(36, 259);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 34);
+            this.comboBox1.Size = new System.Drawing.Size(224, 28);
             this.comboBox1.TabIndex = 11;
             this.comboBox1.Text = "Выбрать семестр";
             // 
@@ -285,10 +285,10 @@
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Location = new System.Drawing.Point(4, 35);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1300, 641);
+            this.tabPage1.Size = new System.Drawing.Size(1300, 647);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Журнал учета занятий";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -306,10 +306,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 35);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1300, 641);
+            this.tabPage2.Size = new System.Drawing.Size(1300, 647);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Нагрузка";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -329,9 +329,9 @@
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.button13);
-            this.tabPage5.Location = new System.Drawing.Point(4, 35);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1280, 590);
+            this.tabPage5.Size = new System.Drawing.Size(1280, 596);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Документы";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -357,10 +357,10 @@
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 35);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1280, 590);
+            this.tabPage3.Size = new System.Drawing.Size(1280, 596);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Группы";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -380,7 +380,7 @@
             this.textBox2.Location = new System.Drawing.Point(543, 105);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(279, 34);
+            this.textBox2.Size = new System.Drawing.Size(279, 29);
             this.textBox2.TabIndex = 8;
             // 
             // label15
@@ -388,7 +388,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(538, 74);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(188, 27);
+            this.label15.Size = new System.Drawing.Size(151, 21);
             this.label15.TabIndex = 7;
             this.label15.Text = "Кол-во студентов";
             // 
@@ -397,7 +397,7 @@
             this.textBox1.Location = new System.Drawing.Point(543, 37);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(279, 34);
+            this.textBox1.Size = new System.Drawing.Size(279, 29);
             this.textBox1.TabIndex = 6;
             // 
             // label14
@@ -405,7 +405,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(538, 6);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 27);
+            this.label14.Size = new System.Drawing.Size(67, 21);
             this.label14.TabIndex = 5;
             this.label14.Text = "Группа";
             // 
@@ -538,10 +538,10 @@
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.comboBox2);
             this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Location = new System.Drawing.Point(4, 35);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1280, 590);
+            this.tabPage4.Size = new System.Drawing.Size(1280, 596);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Преподаватели и дисциплины";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -589,7 +589,7 @@
             this.checkBox21.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox21.Location = new System.Drawing.Point(676, 394);
             this.checkBox21.Name = "checkBox21";
-            this.checkBox21.Size = new System.Drawing.Size(18, 17);
+            this.checkBox21.Size = new System.Drawing.Size(15, 14);
             this.checkBox21.TabIndex = 55;
             this.checkBox21.UseVisualStyleBackColor = true;
             // 
@@ -600,7 +600,7 @@
             this.checkBox22.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox22.Location = new System.Drawing.Point(589, 394);
             this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(18, 17);
+            this.checkBox22.Size = new System.Drawing.Size(15, 14);
             this.checkBox22.TabIndex = 54;
             this.checkBox22.UseVisualStyleBackColor = true;
             // 
@@ -611,7 +611,7 @@
             this.checkBox23.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox23.Location = new System.Drawing.Point(500, 394);
             this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(18, 17);
+            this.checkBox23.Size = new System.Drawing.Size(15, 14);
             this.checkBox23.TabIndex = 53;
             this.checkBox23.UseVisualStyleBackColor = true;
             // 
@@ -622,7 +622,7 @@
             this.checkBox24.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox24.Location = new System.Drawing.Point(413, 394);
             this.checkBox24.Name = "checkBox24";
-            this.checkBox24.Size = new System.Drawing.Size(18, 17);
+            this.checkBox24.Size = new System.Drawing.Size(15, 14);
             this.checkBox24.TabIndex = 52;
             this.checkBox24.UseVisualStyleBackColor = true;
             // 
@@ -633,7 +633,7 @@
             this.checkBox25.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox25.Location = new System.Drawing.Point(333, 394);
             this.checkBox25.Name = "checkBox25";
-            this.checkBox25.Size = new System.Drawing.Size(18, 17);
+            this.checkBox25.Size = new System.Drawing.Size(15, 14);
             this.checkBox25.TabIndex = 51;
             this.checkBox25.UseVisualStyleBackColor = true;
             // 
@@ -642,7 +642,7 @@
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Location = new System.Drawing.Point(12, 385);
             this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(293, 34);
+            this.comboBox7.Size = new System.Drawing.Size(293, 28);
             this.comboBox7.TabIndex = 50;
             // 
             // checkBox26
@@ -652,7 +652,7 @@
             this.checkBox26.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox26.Location = new System.Drawing.Point(676, 354);
             this.checkBox26.Name = "checkBox26";
-            this.checkBox26.Size = new System.Drawing.Size(18, 17);
+            this.checkBox26.Size = new System.Drawing.Size(15, 14);
             this.checkBox26.TabIndex = 49;
             this.checkBox26.UseVisualStyleBackColor = true;
             // 
@@ -663,7 +663,7 @@
             this.checkBox27.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox27.Location = new System.Drawing.Point(589, 354);
             this.checkBox27.Name = "checkBox27";
-            this.checkBox27.Size = new System.Drawing.Size(18, 17);
+            this.checkBox27.Size = new System.Drawing.Size(15, 14);
             this.checkBox27.TabIndex = 48;
             this.checkBox27.UseVisualStyleBackColor = true;
             // 
@@ -674,7 +674,7 @@
             this.checkBox28.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox28.Location = new System.Drawing.Point(500, 354);
             this.checkBox28.Name = "checkBox28";
-            this.checkBox28.Size = new System.Drawing.Size(18, 17);
+            this.checkBox28.Size = new System.Drawing.Size(15, 14);
             this.checkBox28.TabIndex = 47;
             this.checkBox28.UseVisualStyleBackColor = true;
             // 
@@ -685,7 +685,7 @@
             this.checkBox29.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox29.Location = new System.Drawing.Point(413, 354);
             this.checkBox29.Name = "checkBox29";
-            this.checkBox29.Size = new System.Drawing.Size(18, 17);
+            this.checkBox29.Size = new System.Drawing.Size(15, 14);
             this.checkBox29.TabIndex = 46;
             this.checkBox29.UseVisualStyleBackColor = true;
             // 
@@ -696,7 +696,7 @@
             this.checkBox30.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox30.Location = new System.Drawing.Point(333, 354);
             this.checkBox30.Name = "checkBox30";
-            this.checkBox30.Size = new System.Drawing.Size(18, 17);
+            this.checkBox30.Size = new System.Drawing.Size(15, 14);
             this.checkBox30.TabIndex = 45;
             this.checkBox30.UseVisualStyleBackColor = true;
             // 
@@ -705,7 +705,7 @@
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Location = new System.Drawing.Point(12, 345);
             this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(293, 34);
+            this.comboBox8.Size = new System.Drawing.Size(293, 28);
             this.comboBox8.TabIndex = 44;
             // 
             // checkBox31
@@ -715,7 +715,7 @@
             this.checkBox31.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox31.Location = new System.Drawing.Point(676, 314);
             this.checkBox31.Name = "checkBox31";
-            this.checkBox31.Size = new System.Drawing.Size(18, 17);
+            this.checkBox31.Size = new System.Drawing.Size(15, 14);
             this.checkBox31.TabIndex = 43;
             this.checkBox31.UseVisualStyleBackColor = true;
             // 
@@ -726,7 +726,7 @@
             this.checkBox32.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox32.Location = new System.Drawing.Point(589, 314);
             this.checkBox32.Name = "checkBox32";
-            this.checkBox32.Size = new System.Drawing.Size(18, 17);
+            this.checkBox32.Size = new System.Drawing.Size(15, 14);
             this.checkBox32.TabIndex = 42;
             this.checkBox32.UseVisualStyleBackColor = true;
             // 
@@ -737,7 +737,7 @@
             this.checkBox33.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox33.Location = new System.Drawing.Point(500, 314);
             this.checkBox33.Name = "checkBox33";
-            this.checkBox33.Size = new System.Drawing.Size(18, 17);
+            this.checkBox33.Size = new System.Drawing.Size(15, 14);
             this.checkBox33.TabIndex = 41;
             this.checkBox33.UseVisualStyleBackColor = true;
             // 
@@ -748,7 +748,7 @@
             this.checkBox34.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox34.Location = new System.Drawing.Point(413, 314);
             this.checkBox34.Name = "checkBox34";
-            this.checkBox34.Size = new System.Drawing.Size(18, 17);
+            this.checkBox34.Size = new System.Drawing.Size(15, 14);
             this.checkBox34.TabIndex = 40;
             this.checkBox34.UseVisualStyleBackColor = true;
             // 
@@ -759,7 +759,7 @@
             this.checkBox35.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox35.Location = new System.Drawing.Point(333, 314);
             this.checkBox35.Name = "checkBox35";
-            this.checkBox35.Size = new System.Drawing.Size(18, 17);
+            this.checkBox35.Size = new System.Drawing.Size(15, 14);
             this.checkBox35.TabIndex = 39;
             this.checkBox35.UseVisualStyleBackColor = true;
             // 
@@ -768,7 +768,7 @@
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Location = new System.Drawing.Point(12, 305);
             this.comboBox9.Name = "comboBox9";
-            this.comboBox9.Size = new System.Drawing.Size(293, 34);
+            this.comboBox9.Size = new System.Drawing.Size(293, 28);
             this.comboBox9.TabIndex = 38;
             // 
             // checkBox36
@@ -778,7 +778,7 @@
             this.checkBox36.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox36.Location = new System.Drawing.Point(676, 274);
             this.checkBox36.Name = "checkBox36";
-            this.checkBox36.Size = new System.Drawing.Size(18, 17);
+            this.checkBox36.Size = new System.Drawing.Size(15, 14);
             this.checkBox36.TabIndex = 37;
             this.checkBox36.UseVisualStyleBackColor = true;
             // 
@@ -789,7 +789,7 @@
             this.checkBox37.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox37.Location = new System.Drawing.Point(589, 274);
             this.checkBox37.Name = "checkBox37";
-            this.checkBox37.Size = new System.Drawing.Size(18, 17);
+            this.checkBox37.Size = new System.Drawing.Size(15, 14);
             this.checkBox37.TabIndex = 36;
             this.checkBox37.UseVisualStyleBackColor = true;
             // 
@@ -800,7 +800,7 @@
             this.checkBox38.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox38.Location = new System.Drawing.Point(500, 274);
             this.checkBox38.Name = "checkBox38";
-            this.checkBox38.Size = new System.Drawing.Size(18, 17);
+            this.checkBox38.Size = new System.Drawing.Size(15, 14);
             this.checkBox38.TabIndex = 35;
             this.checkBox38.UseVisualStyleBackColor = true;
             // 
@@ -811,7 +811,7 @@
             this.checkBox39.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox39.Location = new System.Drawing.Point(413, 274);
             this.checkBox39.Name = "checkBox39";
-            this.checkBox39.Size = new System.Drawing.Size(18, 17);
+            this.checkBox39.Size = new System.Drawing.Size(15, 14);
             this.checkBox39.TabIndex = 34;
             this.checkBox39.UseVisualStyleBackColor = true;
             // 
@@ -822,7 +822,7 @@
             this.checkBox40.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox40.Location = new System.Drawing.Point(333, 274);
             this.checkBox40.Name = "checkBox40";
-            this.checkBox40.Size = new System.Drawing.Size(18, 17);
+            this.checkBox40.Size = new System.Drawing.Size(15, 14);
             this.checkBox40.TabIndex = 33;
             this.checkBox40.UseVisualStyleBackColor = true;
             // 
@@ -831,7 +831,7 @@
             this.comboBox10.FormattingEnabled = true;
             this.comboBox10.Location = new System.Drawing.Point(12, 265);
             this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(293, 34);
+            this.comboBox10.Size = new System.Drawing.Size(293, 28);
             this.comboBox10.TabIndex = 32;
             // 
             // checkBox11
@@ -841,7 +841,7 @@
             this.checkBox11.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox11.Location = new System.Drawing.Point(676, 234);
             this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(18, 17);
+            this.checkBox11.Size = new System.Drawing.Size(15, 14);
             this.checkBox11.TabIndex = 31;
             this.checkBox11.UseVisualStyleBackColor = true;
             // 
@@ -852,7 +852,7 @@
             this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox12.Location = new System.Drawing.Point(589, 234);
             this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(18, 17);
+            this.checkBox12.Size = new System.Drawing.Size(15, 14);
             this.checkBox12.TabIndex = 30;
             this.checkBox12.UseVisualStyleBackColor = true;
             // 
@@ -863,7 +863,7 @@
             this.checkBox13.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox13.Location = new System.Drawing.Point(500, 234);
             this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(18, 17);
+            this.checkBox13.Size = new System.Drawing.Size(15, 14);
             this.checkBox13.TabIndex = 29;
             this.checkBox13.UseVisualStyleBackColor = true;
             // 
@@ -874,7 +874,7 @@
             this.checkBox14.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox14.Location = new System.Drawing.Point(413, 234);
             this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(18, 17);
+            this.checkBox14.Size = new System.Drawing.Size(15, 14);
             this.checkBox14.TabIndex = 28;
             this.checkBox14.UseVisualStyleBackColor = true;
             // 
@@ -885,7 +885,7 @@
             this.checkBox15.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox15.Location = new System.Drawing.Point(333, 234);
             this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(18, 17);
+            this.checkBox15.Size = new System.Drawing.Size(15, 14);
             this.checkBox15.TabIndex = 27;
             this.checkBox15.UseVisualStyleBackColor = true;
             // 
@@ -894,7 +894,7 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(12, 225);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(293, 34);
+            this.comboBox5.Size = new System.Drawing.Size(293, 28);
             this.comboBox5.TabIndex = 26;
             // 
             // checkBox16
@@ -904,7 +904,7 @@
             this.checkBox16.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox16.Location = new System.Drawing.Point(676, 194);
             this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(18, 17);
+            this.checkBox16.Size = new System.Drawing.Size(15, 14);
             this.checkBox16.TabIndex = 25;
             this.checkBox16.UseVisualStyleBackColor = true;
             // 
@@ -915,7 +915,7 @@
             this.checkBox17.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox17.Location = new System.Drawing.Point(589, 194);
             this.checkBox17.Name = "checkBox17";
-            this.checkBox17.Size = new System.Drawing.Size(18, 17);
+            this.checkBox17.Size = new System.Drawing.Size(15, 14);
             this.checkBox17.TabIndex = 24;
             this.checkBox17.UseVisualStyleBackColor = true;
             // 
@@ -926,7 +926,7 @@
             this.checkBox18.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox18.Location = new System.Drawing.Point(500, 194);
             this.checkBox18.Name = "checkBox18";
-            this.checkBox18.Size = new System.Drawing.Size(18, 17);
+            this.checkBox18.Size = new System.Drawing.Size(15, 14);
             this.checkBox18.TabIndex = 23;
             this.checkBox18.UseVisualStyleBackColor = true;
             // 
@@ -937,7 +937,7 @@
             this.checkBox19.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox19.Location = new System.Drawing.Point(413, 194);
             this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(18, 17);
+            this.checkBox19.Size = new System.Drawing.Size(15, 14);
             this.checkBox19.TabIndex = 22;
             this.checkBox19.UseVisualStyleBackColor = true;
             // 
@@ -948,7 +948,7 @@
             this.checkBox20.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox20.Location = new System.Drawing.Point(333, 194);
             this.checkBox20.Name = "checkBox20";
-            this.checkBox20.Size = new System.Drawing.Size(18, 17);
+            this.checkBox20.Size = new System.Drawing.Size(15, 14);
             this.checkBox20.TabIndex = 21;
             this.checkBox20.UseVisualStyleBackColor = true;
             // 
@@ -957,7 +957,7 @@
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(12, 185);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(293, 34);
+            this.comboBox6.Size = new System.Drawing.Size(293, 28);
             this.comboBox6.TabIndex = 20;
             // 
             // checkBox6
@@ -967,7 +967,7 @@
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox6.Location = new System.Drawing.Point(676, 154);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(18, 17);
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
             this.checkBox6.TabIndex = 19;
             this.checkBox6.UseVisualStyleBackColor = true;
             // 
@@ -978,7 +978,7 @@
             this.checkBox7.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox7.Location = new System.Drawing.Point(589, 154);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(18, 17);
+            this.checkBox7.Size = new System.Drawing.Size(15, 14);
             this.checkBox7.TabIndex = 18;
             this.checkBox7.UseVisualStyleBackColor = true;
             // 
@@ -989,7 +989,7 @@
             this.checkBox8.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox8.Location = new System.Drawing.Point(500, 154);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(18, 17);
+            this.checkBox8.Size = new System.Drawing.Size(15, 14);
             this.checkBox8.TabIndex = 17;
             this.checkBox8.UseVisualStyleBackColor = true;
             // 
@@ -1000,7 +1000,7 @@
             this.checkBox9.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox9.Location = new System.Drawing.Point(413, 154);
             this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(18, 17);
+            this.checkBox9.Size = new System.Drawing.Size(15, 14);
             this.checkBox9.TabIndex = 16;
             this.checkBox9.UseVisualStyleBackColor = true;
             // 
@@ -1011,7 +1011,7 @@
             this.checkBox10.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox10.Location = new System.Drawing.Point(333, 154);
             this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(18, 17);
+            this.checkBox10.Size = new System.Drawing.Size(15, 14);
             this.checkBox10.TabIndex = 15;
             this.checkBox10.UseVisualStyleBackColor = true;
             // 
@@ -1020,7 +1020,7 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(12, 145);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(293, 34);
+            this.comboBox4.Size = new System.Drawing.Size(293, 28);
             this.comboBox4.TabIndex = 14;
             // 
             // checkBox5
@@ -1030,7 +1030,7 @@
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox5.Location = new System.Drawing.Point(676, 114);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(18, 17);
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
             this.checkBox5.TabIndex = 13;
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
@@ -1041,7 +1041,7 @@
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox4.Location = new System.Drawing.Point(589, 114);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(18, 17);
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
             this.checkBox4.TabIndex = 12;
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
@@ -1052,7 +1052,7 @@
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Location = new System.Drawing.Point(500, 114);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(18, 17);
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
             this.checkBox3.TabIndex = 11;
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
@@ -1063,7 +1063,7 @@
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(413, 114);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(18, 17);
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 10;
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
@@ -1074,7 +1074,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(333, 114);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 9;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -1083,7 +1083,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(12, 105);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(293, 34);
+            this.comboBox3.Size = new System.Drawing.Size(293, 28);
             this.comboBox3.TabIndex = 8;
             // 
             // label13
@@ -1091,7 +1091,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(650, 74);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 27);
+            this.label13.Size = new System.Drawing.Size(62, 21);
             this.label13.TabIndex = 7;
             this.label13.Text = "label13";
             // 
@@ -1100,7 +1100,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(475, 74);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 27);
+            this.label11.Size = new System.Drawing.Size(61, 21);
             this.label11.TabIndex = 6;
             this.label11.Text = "label11";
             // 
@@ -1109,7 +1109,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(562, 74);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 27);
+            this.label12.Size = new System.Drawing.Size(62, 21);
             this.label12.TabIndex = 5;
             this.label12.Text = "label12";
             // 
@@ -1118,7 +1118,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(387, 74);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 27);
+            this.label10.Size = new System.Drawing.Size(62, 21);
             this.label10.TabIndex = 4;
             this.label10.Text = "label10";
             // 
@@ -1127,7 +1127,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(311, 74);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(70, 27);
+            this.label9.Size = new System.Drawing.Size(53, 21);
             this.label9.TabIndex = 3;
             this.label9.Text = "label9";
             // 
@@ -1136,7 +1136,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(7, 74);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(298, 27);
+            this.label8.Size = new System.Drawing.Size(232, 21);
             this.label8.TabIndex = 2;
             this.label8.Text = "Наименование дисциплины";
             // 
@@ -1149,7 +1149,7 @@
             "Нестерова Наталья Владимировна"});
             this.comboBox2.Location = new System.Drawing.Point(12, 37);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(298, 34);
+            this.comboBox2.Size = new System.Drawing.Size(298, 28);
             this.comboBox2.TabIndex = 1;
             // 
             // label1
@@ -1157,16 +1157,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 27);
+            this.label1.Size = new System.Drawing.Size(210, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Выберите преподавателя";
             // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.button14);
-            this.tabPage6.Location = new System.Drawing.Point(4, 35);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1280, 590);
+            this.tabPage6.Size = new System.Drawing.Size(1280, 596);
             this.tabPage6.TabIndex = 3;
             this.tabPage6.Text = "Учебная нагрузка";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1182,7 +1182,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1332, 704);
