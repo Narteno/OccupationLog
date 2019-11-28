@@ -37,6 +37,7 @@ namespace OccupationLog
         }
         private void Button1_Click(object sender, EventArgs e) // Поиск преподавателя
         {
+            progressBar1.Value = 0;
             try
             {
                 panel1.Controls.Clear();
@@ -70,7 +71,7 @@ namespace OccupationLog
                             Name = "tb_serach" + flag.ToString(),
                             Location = new Point(x, y),
                             AutoSize = false,
-                            Font = new Font("Times New Roman", 14, FontStyle.Underline),
+                            Font = new Font("Calibri", 14, FontStyle.Underline),
                             Size = new Size(300, 20),
                             Text = link.Text.Replace("Смотреть расписание", ""),
                         };
@@ -533,6 +534,16 @@ namespace OccupationLog
                 else MessageBox.Show("Вам нужно выбрать семестр");
             }
             else MessageBox.Show("Вам нужно подтвердить выбор преподавателя");
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

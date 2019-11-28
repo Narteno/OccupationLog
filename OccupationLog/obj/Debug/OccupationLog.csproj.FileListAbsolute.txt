@@ -11,3 +11,17 @@ I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyCom
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb
 I:\Проги\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.ResolveComReference.cache
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe.config
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\bin\Debug\OccupationLog.pdb
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\bin\Debug\WebDriver.dll
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\bin\Debug\WebDriver.xml
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csprojAssemblyReference.cache
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.ResolveComReference.cache
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Form1.resources
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Properties.Resources.resources
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.GenerateResource.cache
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CoreCompileInputs.cache
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyComplete
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
+C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb
