@@ -25,3 +25,17 @@ C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\Occu
 C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyComplete
 C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
 C:\Users\sasna\Desktop\Projects\HUITA\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb
+D:\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe.config
+D:\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.exe
+D:\c#\OccupationLog\OccupationLog\bin\Debug\OccupationLog.pdb
+D:\c#\OccupationLog\OccupationLog\bin\Debug\WebDriver.dll
+D:\c#\OccupationLog\OccupationLog\bin\Debug\WebDriver.xml
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csprojAssemblyReference.cache
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.ResolveComReference.cache
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Form1.resources
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.Properties.Resources.resources
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.GenerateResource.cache
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CoreCompileInputs.cache
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.csproj.CopyComplete
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.exe
+D:\c#\OccupationLog\OccupationLog\obj\Debug\OccupationLog.pdb

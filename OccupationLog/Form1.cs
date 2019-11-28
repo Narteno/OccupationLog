@@ -117,7 +117,7 @@ namespace OccupationLog
                 }
                 label5.Visible = true;
                 lb = null;
-                progressBar1.Visible = false;
+                
             }
             catch (Exception ex)
             {
@@ -127,6 +127,7 @@ namespace OccupationLog
             {
                 driver.Quit();
                 WebDriverIsOpen = false;
+                progressBar1.Visible = false;
             }
         }
         public IEnumerable<Control> GetAll(Control control, Type type)
@@ -169,6 +170,7 @@ namespace OccupationLog
         }
         private void Button2_Click(object sender, EventArgs e) // Загрузка РПД
         {
+            progressBar2.Visible = true;
             _Word.Application word = new _Word.Application();
             _Word.Document doc = new _Word.Document();
 
@@ -261,6 +263,7 @@ namespace OccupationLog
             {
                 doc.Close(ref saveChanges);
                 word.Quit(ref saveChanges);
+                progressBar2.Visible = false;
             }
         }        
         private void Button3_Click(object sender, EventArgs e) // Составляем журнал
@@ -276,12 +279,12 @@ namespace OccupationLog
                     {
                         // число, месяц - время - №группы - isлекция
                         driver = new ChromeDriver(); WebDriverIsOpen = true;
-                        if (comboBox1.Text == "1" || comboBox1.Text == "3" || comboBox1.Text == "5" || comboBox1.Text == "7")
+                        if (Convert.ToInt32(comboBox1.Text) % 2 == 1) 
                         {
                             WeekTo = 18; WeekStart = 1;
                             //driver.Url = @"" + lb.Tag + "&week_num=1";
                         }
-                        else if (comboBox1.Text == "2" || comboBox1.Text == "4" || comboBox1.Text == "6" || comboBox1.Text == "8")
+                        else
                         {
                             WeekTo = 44; WeekStart = 24;
                             //driver.Url = @"" + lb.Tag + "&week_num=24";
@@ -301,7 +304,7 @@ namespace OccupationLog
                                 {
                                     try
                                     {
-                                        var GetName = tryCSS[k].FindElement(By.TagName("label")).Text;//(By.XPath("./div[@class='all_lessons_info']/div[class='one_lesson_info']/label")).Text;
+                                        var GetName = tryCSS[k].FindElement(By.TagName("label")).Text;
                                         if (GetName == NameOfTheDiscipline)
                                         {
                                             var ProverkaLekcii = tryCSS[k].FindElement(By.ClassName("type_employment")).GetAttribute("style");
