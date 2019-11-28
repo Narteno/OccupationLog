@@ -35,6 +35,66 @@ namespace OccupationLog
                 ls[i] += ";" + cell.Range.Text.Substring(9,1);
             }
         }
+        private void FillProverka(List<string> ls, List<string> Proverka)
+        {
+            for (int i = 0; i < ls.Count; i++)
+            {
+                string[] pr = ls[i].Split(';');
+                if (pr[0] != "" && pr[2] == comboBox1.Text)
+                {
+                    for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
+                    {
+                        Proverka.Add(pr[1]);
+                    }
+                }
+            }
+        }
+        private void FillLists(List<string> PastList, List<string> FutureList)
+        {
+            if (PastList.Count != 0)
+            {
+                bool IsHave = true;
+                string[] GetGroup = PastList[0].Split(',');
+                for (int i = 1; i < PastList.Count; i++)
+                {
+                    GetGroup = PastList[i].Split(',');
+                    for (int j = 0; j < FutureList.Count; j++)
+                    {
+                        if (GetGroup[2] == FutureList[j])
+                        {
+                            IsHave = false;
+                            break;
+                        }
+                    }
+                    if (IsHave)
+                        FutureList.Add(GetGroup[2]);
+                    IsHave = true;
+                }
+            }
+        }
+        private int FillAllInfo(List<string> proverka, List<string> Counts, List<string> All, int i)
+        {
+            if (proverka[0] == proverka[1])
+            {
+                for (int j = 0; j < Counts.Count; j++)
+                {
+                    All[i + j] = proverka[0] + "," + All[i + j];
+                }
+                proverka.RemoveAt(0); proverka.RemoveAt(0);
+                i += Counts.Count - 1;
+
+            }
+            else
+            {
+                for (int j = 0; j < Counts.Count; j++)
+                {
+                    All[i + j] = proverka[0] + "\n" + proverka[1] + "," + All[i + j];
+                }
+                proverka.RemoveAt(0); proverka.RemoveAt(0);
+                i += Counts.Count - 1;
+            }
+            return i;
+        }
         private void Button1_Click(object sender, EventArgs e) // Поиск преподавателя
         {
             progressBar1.Value = 0;
@@ -258,6 +318,7 @@ namespace OccupationLog
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Возник сбой программы",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                label4.Text = "Документ не выбран";
             }
             finally
             {
@@ -271,28 +332,29 @@ namespace OccupationLog
             int WeekTo=0,WeekStart=0;
             List<int> ls = new List<int>();
             List<string> AllInfo = new List<string>();
-            if (lb == null) // ИСПРАВИТЬ НА !=
+            List<string> CountOfGroupsPractics = new List<string>();
+            List<string> CountOfGroupsLections = new List<string>();
+            List<string> CountOfGroupsLabs = new List<string>();
+            if (lb != null) 
             {
                 if (comboBox1.Text != "Выбрать семестр")
                 {
                     try
                     {
-                        // число, месяц - время - №группы - isлекция
                         driver = new ChromeDriver(); WebDriverIsOpen = true;
                         if (Convert.ToInt32(comboBox1.Text) % 2 == 1) 
                         {
                             WeekTo = 18; WeekStart = 1;
-                            //driver.Url = @"" + lb.Tag + "&week_num=1";
                         }
                         else
                         {
                             WeekTo = 44; WeekStart = 24;
-                            //driver.Url = @"" + lb.Tag + "&week_num=24";
                         }
+                        bool IsGroupPracticsAdded = false, IsGroupLabsAdded = false, IsGroupLectionsAdded = false;
                         for (int week = WeekStart; week < WeekTo; week++)
                         {
-                            //driver.Url = @"" + lb.Tag + "&week_num=" + week; ВЕРНУТЬ!!!!
-                            driver.Url = @"http://schedule.tsu.ru/teachers_schedule?teach_id=15513&week_num=" + week;
+                            driver.Url = @"" + lb.Tag + "&week_num=" + week;
+                            //driver.Url = @"http://schedule.tsu.ru/teachers_schedule?teach_id=15513&week_num=" + week; TEMP PATH
                             var GetDate = driver.FindElement(By.XPath(@".//div[@class='schedule-print-block']/span[@class='schedule-info-week']"));
                             var date = GetDate.Text.Substring(GetDate.Text.Length - 23, 23).Substring(0, 10).Replace(".", "/");
                             DateTime d = DateTime.Parse(date);
@@ -321,6 +383,9 @@ namespace OccupationLog
                                                 d = d.AddDays(j);
                                                 AllInfo.Add(d.ToString().Substring(0, d.ToString().Length - 8) + "," + ReturnTime(k) + "," + WhatIsGroup + "," + TypeOfLesson);
                                                 d = DateTime.Parse(date);
+                                                if (TypeOfLesson == "л" && !IsGroupLectionsAdded) { CountOfGroupsLections.Add(WhatIsGroup); IsGroupLectionsAdded = true; }
+                                                if (TypeOfLesson == "п" && !IsGroupPracticsAdded) { CountOfGroupsPractics.Add(WhatIsGroup); IsGroupPracticsAdded = true; }
+                                                if (TypeOfLesson == "лаб" && !IsGroupLabsAdded) { CountOfGroupsLabs.Add(WhatIsGroup); IsGroupLabsAdded = true; }
                                             }
                                         }
                                     }
@@ -328,28 +393,16 @@ namespace OccupationLog
                                 }
                             }
                         }
-                        int flazhok = 0;
-                        List<string> proverka = new List<string>();
-                        string Semestr = comboBox1.Text;
-                        for (int i = 0; i < AllListLec.Count; i++)
-                        {
-                            string[] pr = new string[2];
-                            pr = AllListLec[i].Split(';');
-                            if (pr[0] != "" && pr[2] == Semestr)
-                            {
-                                for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
-                                {
-                                    proverka.Add(pr[1]);
-                                    flazhok++;
-                                }
-                            }
-                        }
-                        flazhok = 0;
                         List<string> ListOfPrakrics = new List<string>();
                         List<string> ListOfLections = new List<string>();
-                        List<string> CountOfGroups = new List<string>();
-                        List<string> CountOfGroupsLections = new List<string>();
-                        string[] GetGroup = new string[4];
+                        List<string> ListOfLabs = new List<string>();
+                        List<string> proverka = new List<string>();
+                        List<string> proverka2 = new List<string>();
+                        List<string> proverka3 = new List<string>();
+                        FillProverka(AllListLec, proverka);
+                        FillProverka(AllListLab, proverka2);
+                        FillProverka(AllListPr, proverka3);
+                        string[] GetGroup;
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
                             GetGroup = AllInfo[i].Split(',');
@@ -357,105 +410,32 @@ namespace OccupationLog
                                 ListOfPrakrics.Add(AllInfo[i]);
                             else if (GetGroup[3] == "л")
                                 ListOfLections.Add(AllInfo[i]);
+                            else if (GetGroup[3] == "лаб")
+                                ListOfLabs.Add(AllInfo[i]);
                         }
-                        GetGroup = ListOfPrakrics[0].Split(',');
-                        CountOfGroups.Add(GetGroup[2]);
-                        bool IsHave = true;
-                        for (int i = 1; i < ListOfPrakrics.Count; i++)
-                        {
-                            GetGroup = ListOfPrakrics[i].Split(',');
-                            for (int j = 0; j < CountOfGroups.Count; j++)
-                            {
-                                if (GetGroup[2] == CountOfGroups[j])
-                                {
-                                    IsHave = false;
-                                    break;
-                                }
-                            }
-                            if (IsHave)
-                                CountOfGroups.Add(GetGroup[2]);
-                            IsHave = true;
-                        }
-                        GetGroup = ListOfLections[0].Split(',');
-                        CountOfGroupsLections.Add(GetGroup[2]);
-                        IsHave = true;
-                        for (int i = 1; i < ListOfLections.Count; i++)
-                        {
-                            GetGroup = ListOfLections[i].Split(',');
-                            for (int j = 0; j < CountOfGroupsLections.Count; j++)
-                            {
-                                if (GetGroup[2] == CountOfGroupsLections[j])
-                                {
-                                    IsHave = false;
-                                    break;
-                                }
-                            }
-                            if (IsHave)
-                                CountOfGroupsLections.Add(GetGroup[2]);
-                            IsHave = true;
-                        }
-                        List<string> proverka2 = new List<string>();
-                        for (int i = 0; i < AllListPr.Count; i++)
-                        {
-                            string[] pr = new string[2];
-                            pr = AllListPr[i].Split(';');
-                            if (pr[0] != "")
-                            {
-                                for (int j = 0; j < Convert.ToInt32(pr[0]); j++)
-                                {
-                                    proverka2.Add(pr[1]);
-                                    flazhok++;
-                                }
-                            }
-                        }
+                        
+                        FillLists(ListOfPrakrics, CountOfGroupsPractics);
+                        FillLists(ListOfLections, CountOfGroupsLections);
+                        FillLists(ListOfLabs, CountOfGroupsLabs);
+                        
+                        
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
                             string[] DataOfLesson = new string[4];
                             DataOfLesson = AllInfo[i].Split(',');
                             if (DataOfLesson[3] == "л")
                             {
-                                if (proverka[0] == proverka[1])
-                                {
-                                    for (int j = 0; j < CountOfGroupsLections.Count; j++)
-                                    {
-                                        AllInfo[i + j] = proverka[0] + "," + AllInfo[i + j];
-                                    }
-                                    proverka.RemoveAt(0); proverka.RemoveAt(0);
-                                    i += CountOfGroupsLections.Count - 1;
-
-                                }
-                                else
-                                {
-                                    for (int j = 0; j < CountOfGroupsLections.Count; j++)
-                                    {
-                                        AllInfo[i + j] = proverka[0] + "\n" + proverka[1] + "," + AllInfo[i + j];
-                                    }
-                                    proverka.RemoveAt(0); proverka.RemoveAt(0);
-                                    i += CountOfGroupsLections.Count - 1;
-                                }
+                                i = FillAllInfo(proverka,CountOfGroupsLections,AllInfo,i);
+                            }
+                            else if (DataOfLesson[3] == "лаб")
+                            {
+                                i = FillAllInfo(proverka2, CountOfGroupsLabs, AllInfo, i);
                             }
                             else if (DataOfLesson[3] == "п")
                             {
-                                if (proverka2[0] == proverka2[1])
-                                {
-                                    for (int j = 0; j < CountOfGroups.Count; j++)
-                                    {
-                                        AllInfo[i + j] = proverka2[0] + "," + AllInfo[i + j];
-                                    }
-                                    proverka2.RemoveAt(0); proverka2.RemoveAt(0);
-                                    i += CountOfGroups.Count - 1;
-                                }
-                                else
-                                {
-                                    for (int j = 0; j < CountOfGroups.Count; j++)
-                                    {
-                                        AllInfo[i + j] = proverka2[0] + "\n" + proverka2[1] + "," + AllInfo[i + j];
-
-                                    }
-                                    proverka2.RemoveAt(0); proverka2.RemoveAt(0);
-                                    i += CountOfGroups.Count - 1;
-                                }
+                                i = FillAllInfo(proverka3, CountOfGroupsPractics, AllInfo, i);
                             }
+
                         }
                         _Excel.Application xlApp = new _Excel.Application
                         {
@@ -485,42 +465,48 @@ namespace OccupationLog
                         range = xlWorkSheet.get_Range("B5", "D5").Cells; range.Merge(Type.Missing); range.HorizontalAlignment = 2;
                         range = xlWorkSheet.get_Range("A1", "D5").Cells;
                         range.Borders.LineStyle = _Excel.XlLineStyle.xlContinuous;
-                        range = xlWorkSheet.get_Range("A10", "H82").Cells;
+                        range = xlWorkSheet.get_Range("A10", "I82").Cells;
                         range.Borders.LineStyle = _Excel.XlLineStyle.xlContinuous;
-                        range = xlWorkSheet.get_Range("A10", "H10").Cells; range.Font.Bold = true;
+                        range = xlWorkSheet.get_Range("A10", "I10").Cells; range.Font.Bold = true;
                         range = xlWorkSheet.get_Range("A10").Cells; range.FormulaR1C1 = "Число, месяц";
                         range = xlWorkSheet.get_Range("B10").Cells; range.FormulaR1C1 = "Время";
                         range = xlWorkSheet.get_Range("C10").Cells; range.FormulaR1C1 = "№ группы";
                         range = xlWorkSheet.get_Range("D10").Cells; range.FormulaR1C1 = "Тема занятия";
                         range = xlWorkSheet.get_Range("E10").Cells; range.FormulaR1C1 = "Лекция";
-                        range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Семинарское занятие (практическое, лабораторное)";
-                        range = xlWorkSheet.get_Range("G10").Cells; range.FormulaR1C1 = "Консультация";
-                        range = xlWorkSheet.get_Range("H10").Cells; range.FormulaR1C1 = "Зачёт/Экзамен";
+                        //range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Семинарское занятие (практическое, лабораторное)"; 
+                        range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Практическое занятие"; // added
+                        range = xlWorkSheet.get_Range("G10").Cells; range.FormulaR1C1 = "Лабораторное занятие"; // added
+                        range = xlWorkSheet.get_Range("H10").Cells; range.FormulaR1C1 = "Консультация";
+                        range = xlWorkSheet.get_Range("I10").Cells; range.FormulaR1C1 = "Зачёт/Экзамен";
                         range = xlWorkSheet.get_Range("A1", "A82").Cells; range.ColumnWidth = 16;
                         range = xlWorkSheet.get_Range("B1", "B82").Cells; range.ColumnWidth = 17;
                         range = xlWorkSheet.get_Range("C1", "C82").Cells; range.ColumnWidth = 14;
                         range = xlWorkSheet.get_Range("D1", "D82").Cells; range.ColumnWidth = 50;
                         range = xlWorkSheet.get_Range("E1", "E82").Cells; range.ColumnWidth = 13;
-                        range = xlWorkSheet.get_Range("F1", "F82").Cells; range.ColumnWidth = 50;
-                        range = xlWorkSheet.get_Range("G1", "G82").Cells; range.ColumnWidth = 16;
+                        range = xlWorkSheet.get_Range("F1", "F82").Cells; range.ColumnWidth = 44;
+                        range = xlWorkSheet.get_Range("G1", "G82").Cells; range.ColumnWidth = 44;
                         range = xlWorkSheet.get_Range("H1", "H82").Cells; range.ColumnWidth = 16;
+                        range = xlWorkSheet.get_Range("I1", "I82").Cells; range.ColumnWidth = 16;
                         int index = 0;
-                        string[] part = new string[4];
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
-                            part = AllInfo[i].Split(',');
+                            string[] part = AllInfo[i].Split(',');
                             index = i + 11;
                             range = range = xlWorkSheet.get_Range("A" + index.ToString()).Cells; range.FormulaR1C1 = part[1];
                             range = range = xlWorkSheet.get_Range("B" + index.ToString()).Cells; range.FormulaR1C1 = part[2];
                             range = range = xlWorkSheet.get_Range("C" + index.ToString()).Cells; range.FormulaR1C1 = part[3];
                             range = range = xlWorkSheet.get_Range("D" + index.ToString()).Cells; range.FormulaR1C1 = part[0];
-                            if (part[4] == "л")
+                            if (part[4] == "л") 
                             {
                                 range = range = xlWorkSheet.get_Range("E" + index.ToString()).Cells; range.FormulaR1C1 = "2";
                             }
-                            else
+                            else if (part[4] == "п")
                             {
                                 range = range = xlWorkSheet.get_Range("F" + index.ToString()).Cells; range.FormulaR1C1 = "2";
+                            }
+                            else if (part[4] == "лаб")
+                            {
+                                range = range = xlWorkSheet.get_Range("G" + index.ToString()).Cells; range.FormulaR1C1 = "2";
                             }
                         }
                     }
@@ -539,14 +525,22 @@ namespace OccupationLog
             else MessageBox.Show("Вам нужно подтвердить выбор преподавателя");
         }
 
-        private void Label2_Click(object sender, EventArgs e)
+        private void tb_family_teacher_Enter(object sender, EventArgs e)
         {
-
+            if (tb_family_teacher.Text == "" || tb_family_teacher.Text == "Введите фамилию преподавателя")
+            {
+                tb_family_teacher.ForeColor = Color.FromKnownColor(KnownColor.WindowText);
+                tb_family_teacher.Text = "";
+            }
         }
 
-        private void Label6_Click(object sender, EventArgs e)
+        private void tb_family_teacher_Leave(object sender, EventArgs e)
         {
-
+            if (tb_family_teacher.Text == "" || tb_family_teacher.Text == "Введите фамилию преподавателя")
+            {
+                tb_family_teacher.ForeColor = Color.DimGray;
+                tb_family_teacher.Text = "Введите фамилию преподавателя";
+            }
         }
     }
 }
