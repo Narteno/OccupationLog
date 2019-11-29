@@ -1,0 +1,13 @@
+I:\Проги\OccupationLog\OccupationLog\bin\Release\OccupationLog.exe.config
+I:\Проги\OccupationLog\OccupationLog\bin\Release\OccupationLog.exe
+I:\Проги\OccupationLog\OccupationLog\bin\Release\OccupationLog.pdb
+I:\Проги\OccupationLog\OccupationLog\bin\Release\WebDriver.dll
+I:\Проги\OccupationLog\OccupationLog\bin\Release\WebDriver.xml
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.csprojAssemblyReference.cache
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.csproj.ResolveComReference.cache
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.Form1.resources
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.Properties.Resources.resources
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.csproj.GenerateResource.cache
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.csproj.CopyComplete
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.exe
+I:\Проги\OccupationLog\OccupationLog\obj\Release\OccupationLog.pdb
