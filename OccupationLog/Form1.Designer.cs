@@ -305,6 +305,7 @@
             this.progressBar2.Location = new System.Drawing.Point(629, 663);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(342, 23);
+            this.progressBar2.Step = 6;
             this.progressBar2.TabIndex = 16;
             this.progressBar2.Visible = false;
             // 

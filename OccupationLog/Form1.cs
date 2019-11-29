@@ -230,7 +230,6 @@ namespace OccupationLog
         }
         private void Button2_Click(object sender, EventArgs e) // Загрузка РПД
         {
-            progressBar2.Visible = true;
             _Word.Application word = new _Word.Application();
             _Word.Document doc = new _Word.Document();
 
@@ -324,11 +323,11 @@ namespace OccupationLog
             {
                 doc.Close(ref saveChanges);
                 word.Quit(ref saveChanges);
-                progressBar2.Visible = false;
             }
         }        
         private void Button3_Click(object sender, EventArgs e) // Составляем журнал
         {
+            progressBar2.Visible = true;
             int WeekTo=0,WeekStart=0;
             List<int> ls = new List<int>();
             List<string> AllInfo = new List<string>();
@@ -341,7 +340,7 @@ namespace OccupationLog
                 {
                     try
                     {
-                        driver = new ChromeDriver(); WebDriverIsOpen = true;
+                        driver = new ChromeDriver(cds,options); WebDriverIsOpen = true;
                         if (Convert.ToInt32(comboBox1.Text) % 2 == 1) 
                         {
                             WeekTo = 18; WeekStart = 1;
@@ -354,7 +353,6 @@ namespace OccupationLog
                         for (int week = WeekStart; week < WeekTo; week++)
                         {
                             driver.Url = @"" + lb.Tag + "&week_num=" + week;
-                            //driver.Url = @"http://schedule.tsu.ru/teachers_schedule?teach_id=15513&week_num=" + week; TEMP PATH
                             var GetDate = driver.FindElement(By.XPath(@".//div[@class='schedule-print-block']/span[@class='schedule-info-week']"));
                             var date = GetDate.Text.Substring(GetDate.Text.Length - 23, 23).Substring(0, 10).Replace(".", "/");
                             DateTime d = DateTime.Parse(date);
@@ -392,6 +390,7 @@ namespace OccupationLog
                                     catch { }
                                 }
                             }
+                            progressBar2.PerformStep();
                         }
                         List<string> ListOfPrakrics = new List<string>();
                         List<string> ListOfLections = new List<string>();
@@ -402,10 +401,9 @@ namespace OccupationLog
                         FillProverka(AllListLec, proverka);
                         FillProverka(AllListLab, proverka2);
                         FillProverka(AllListPr, proverka3);
-                        string[] GetGroup;
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
-                            GetGroup = AllInfo[i].Split(',');
+                            string[] GetGroup = AllInfo[i].Split(',');
                             if (GetGroup[3] == "п")
                                 ListOfPrakrics.Add(AllInfo[i]);
                             else if (GetGroup[3] == "л")
@@ -413,16 +411,12 @@ namespace OccupationLog
                             else if (GetGroup[3] == "лаб")
                                 ListOfLabs.Add(AllInfo[i]);
                         }
-                        
                         FillLists(ListOfPrakrics, CountOfGroupsPractics);
                         FillLists(ListOfLections, CountOfGroupsLections);
                         FillLists(ListOfLabs, CountOfGroupsLabs);
-                        
-                        
                         for (int i = 0; i < AllInfo.Count; i++)
                         {
-                            string[] DataOfLesson = new string[4];
-                            DataOfLesson = AllInfo[i].Split(',');
+                            string[] DataOfLesson = AllInfo[i].Split(',');
                             if (DataOfLesson[3] == "л")
                             {
                                 i = FillAllInfo(proverka,CountOfGroupsLections,AllInfo,i);
@@ -473,9 +467,8 @@ namespace OccupationLog
                         range = xlWorkSheet.get_Range("C10").Cells; range.FormulaR1C1 = "№ группы";
                         range = xlWorkSheet.get_Range("D10").Cells; range.FormulaR1C1 = "Тема занятия";
                         range = xlWorkSheet.get_Range("E10").Cells; range.FormulaR1C1 = "Лекция";
-                        //range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Семинарское занятие (практическое, лабораторное)"; 
-                        range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Практическое занятие"; // added
-                        range = xlWorkSheet.get_Range("G10").Cells; range.FormulaR1C1 = "Лабораторное занятие"; // added
+                        range = xlWorkSheet.get_Range("F10").Cells; range.FormulaR1C1 = "Практическое занятие";
+                        range = xlWorkSheet.get_Range("G10").Cells; range.FormulaR1C1 = "Лабораторное занятие";
                         range = xlWorkSheet.get_Range("H10").Cells; range.FormulaR1C1 = "Консультация";
                         range = xlWorkSheet.get_Range("I10").Cells; range.FormulaR1C1 = "Зачёт/Экзамен";
                         range = xlWorkSheet.get_Range("A1", "A82").Cells; range.ColumnWidth = 16;
@@ -483,8 +476,8 @@ namespace OccupationLog
                         range = xlWorkSheet.get_Range("C1", "C82").Cells; range.ColumnWidth = 14;
                         range = xlWorkSheet.get_Range("D1", "D82").Cells; range.ColumnWidth = 50;
                         range = xlWorkSheet.get_Range("E1", "E82").Cells; range.ColumnWidth = 13;
-                        range = xlWorkSheet.get_Range("F1", "F82").Cells; range.ColumnWidth = 44;
-                        range = xlWorkSheet.get_Range("G1", "G82").Cells; range.ColumnWidth = 44;
+                        range = xlWorkSheet.get_Range("F1", "F82").Cells; range.ColumnWidth = 25;
+                        range = xlWorkSheet.get_Range("G1", "G82").Cells; range.ColumnWidth = 25;
                         range = xlWorkSheet.get_Range("H1", "H82").Cells; range.ColumnWidth = 16;
                         range = xlWorkSheet.get_Range("I1", "I82").Cells; range.ColumnWidth = 16;
                         int index = 0;
@@ -518,6 +511,7 @@ namespace OccupationLog
                     {
                         driver.Quit();
                         WebDriverIsOpen = false;
+                        progressBar2.Visible = false;
                     }
                 }
                 else MessageBox.Show("Вам нужно выбрать семестр");
